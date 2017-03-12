@@ -112,6 +112,7 @@
   <ItemGroup>
     <ClInclude Include="Block.h" />
     <ClInclude Include="Maze.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Block.cpp" />
