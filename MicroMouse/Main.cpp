@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Block.h"
+#include "Stack.h"
 #include "Maze.h"
 
 using namespace std;
@@ -22,6 +23,15 @@ int main() {
     maze.Initialize();
     maze.PrintDistance();
 
+    Stack<int> stack;
+    cout << "Initialized?: " << stack.size() << endl;
+
+    for (int i = 0; i < 17; i++) {
+        cout << i << endl;
+        stack.push(i);
+    }
+
+    cout << "Stack size: " << stack.size() << endl;
 
     cin >> x;
 }
