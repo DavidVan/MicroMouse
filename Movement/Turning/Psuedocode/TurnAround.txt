@@ -1,0 +1,20 @@
+//turn around
+
+pinset(Lm);
+pinset(Rm);
+
+2*rotation lm; //positive
+2*rotation rm; //negative
+
+pinLm(2*rotation lm);
+pinRm(2*rotation rm);
+
+//Go backwards
+
+pinset(Lm);
+pinset(Rm);
+
+rotation x; //negative
+
+pinLm(rotation);
+pinRm(rotation);

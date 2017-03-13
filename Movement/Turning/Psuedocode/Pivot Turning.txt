@@ -1,0 +1,25 @@
+ //turn left
+ //pivot
+
+pinset(Lm);
+pinset(Rm);
+
+rotation lm; //negative
+rotation rm; //positive
+
+pinLm(rotation lm);
+pinRm(rotation rm);
+
+//turn right
+//pivot
+
+pinset(Lm);
+pinset(Rm);
+
+rotation lm; //positive
+rotation rm; //negative
+
+pinLm(rotation lm);
+pinRm(rotation rm);
+
+

@@ -1,0 +1,23 @@
+ //turn left
+ //curve
+
+pinset(Lm);
+pinset(Rm);
+
+rotation lm; //zero
+rotation rm; //positive
+
+pinLm(rotation lm);
+pinRm(rotation rm);
+
+ //turn right
+ //curve
+
+pinset(Lm);
+pinset(Rm);
+
+rotation lm; //positive
+rotation rm; //zero
+
+pinLm(rotation lm);
+pinRm(rotation rm);
