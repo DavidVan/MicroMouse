@@ -3,7 +3,7 @@
 
 #include <iostream>
 using namespace std;
-template <class TData>
+template <typename TData>
 class Stack {
 private:
     TData* elements;
@@ -27,39 +27,39 @@ public:
     bool empty();
 };
 
-template <class TData>
+template <typename TData>
 void Stack<TData>::push(const TData& data) {
     if (_size == _maxArraySize) {
         cout << "Resizing!" << endl;
         resizeArray(); // Resize internal array to double its current size.
     }
     cout << "Hello" << endl;
-    elements[++_size] = data;
+    elements[_size++] = data;
 }
 
-template <class TData>
+template <typename TData>
 const TData& Stack<TData>::pop() {
     TData data = elements[_size - 1];
     elements[_size--] = NULL; // Set to null and decrement.
     return data;
 }
 
-template <class TData>
+template <typename TData>
 const TData& Stack<TData>::peek() {
     return elements[_size - 1];
 }
 
-template <class TData>
+template <typename TData>
 int Stack<TData>::size() {
     return _size;
 }
 
-template <class TData>
+template <typename TData>
 bool Stack<TData>::empty() {
     return size == 0;
 }
 
-template <class TData>
+template <typename TData>
 void Stack<TData>::resizeArray() {
     TData* oldData = elements;
     int oldSize = _maxArraySize;
@@ -71,7 +71,7 @@ void Stack<TData>::resizeArray() {
         elements[i] = oldData[i];
     }
 
-    delete[] oldData; // Remove the old data. // Stalls program...
+    delete[] oldData; // Remove the old data.
 }
 
 #endif
