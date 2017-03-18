@@ -7,6 +7,7 @@ class Maze {
 
 private:
     Block mMaze[16][16];
+    void FloodFill();
     void CalculateDistance();
     int CalculateManhattanDistance(int, int, int, int);
     int CalculateMinimum(int, int, int, int);

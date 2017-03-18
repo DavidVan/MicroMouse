@@ -2,6 +2,8 @@
 #include <cmath>
 #include "Maze.h"
 
+using namespace std;
+
 void Maze::Initialize() {
     for (int i = 0; i < 16; i++) {
         for (int j = 0; j < 16; j++) {
@@ -54,6 +56,10 @@ void Maze::Initialize() {
 
 Block(*Maze::GetMaze())[16] { // What the fuck.
     return mMaze;
+}
+
+void Maze::FloodFill() {
+
 }
 
 void Maze::CalculateDistance() {
