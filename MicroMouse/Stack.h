@@ -30,10 +30,8 @@ public:
 template <typename TData>
 void Stack<TData>::push(const TData& data) {
     if (_size == _maxArraySize) {
-        cout << "Resizing!" << endl;
         resizeArray(); // Resize internal array to double its current size.
     }
-    cout << "Hello" << endl;
     elements[_size++] = data;
 }
 
