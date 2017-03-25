@@ -142,33 +142,41 @@ void goStraight()
 }
 void pivotRight()
 {
-  stepper1.run();
-  stepper2.stop();
-}
-void curveRight()
-{
-  stepper1.run(500);
-  stepper2.run(-500);
+  stepper1.setSpeed(500);
+  stepper2.setSpeed(-500);
+  stepper1.runSpeed();
+  stepper2.runSpeed();
 }
 void pivotLeft()
 {
-  stepper1.stop();
-  stepper2.run();
+  stepper1.setSpeed(-500);
+  stepper2.setSpeed(500);
+  stepper1.runSpeed();
+  stepper2.runSpeed();
+}
+void curveRight()
+{
+  stepper1.setSpeed(500);
+  stepper1.runSpeed();
+  stepper2.stop();
 }
 void curveLeft()
 {
-  stepper1.run(-500);
-  stepper2.run(500);
+  stepper2.setSpeed(500);
+  stepper2.runSpeed();
+  stepper1.stop();
 }
 void turnAround()
 {
-  void curveRight();
-  void curveRight();
+  void pivotRight();
+  void pivotRight();
 }
 void goBackwards()
 {
-  stepper1.run(-500);
-  stepper2.run(-500);
+  stepper1.setSpeed(-500);
+  stepper2.setSpeed(-500);
+  stepper1.runSpeed();
+  stepper2.runSpeed();
 }
 
 
