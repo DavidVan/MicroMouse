@@ -125,22 +125,52 @@ void loop()
 
 void stopBoth()
 {
-  
+  stepper1.stop();
+  stepper2.stop();
 }
 void goStraight()
 {
-  
+  stepper1.run();
+  stepper2.run();
 }
-void goRight()
+void pivotRight()
 {
-  
+  stepper1.setSpeed(500);
+  stepper2.setSpeed(-500);
+  stepper1.runSpeed();
+  stepper2.runSpeed();
 }
-void goLeft()
+void pivotLeft()
 {
-  
+  stepper1.setSpeed(-500);
+  stepper2.setSpeed(500);
+  stepper1.runSpeed();
+  stepper2.runSpeed();
 }
-void turnAround()
+void curveRight()
 {
-  
+  stepper1.setSpeed(500);
+  stepper1.runSpeed();
+  stepper2.stop();
+}
+void curveLeft()
+{
+  stepper2.setSpeed(500);
+  stepper2.runSpeed();
+  stepper1.stop();
+}
+void turnAround() // we'll fix this
+{
+  stepper1.setSpeed(-500);
+  stepper2.setSpeed(500);
+  stepper1.runSpeed();
+  stepper2.runSpeed();
+}
+void goBackwards()
+{
+  stepper1.setSpeed(-500);
+  stepper2.setSpeed(-500);
+  stepper1.runSpeed();
+  stepper2.runSpeed();
 }
 
