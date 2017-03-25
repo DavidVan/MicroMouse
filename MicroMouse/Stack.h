@@ -38,7 +38,7 @@ void Stack<TData>::push(const TData& data) {
 template <typename TData>
 const TData& Stack<TData>::pop() {
     TData data = elements[_size - 1];
-    elements[_size--] = NULL; // Set to null and decrement.
+    elements[--_size] = NULL; // Set to null and decrement.
     return data;
 }
 

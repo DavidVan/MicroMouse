@@ -33,5 +33,9 @@ int main() {
 
     cout << "Stack size: " << stack.size() << endl;
 
+    cout << "Item: " << stack.pop() << endl;
+
+    cout << "Stack size: " << stack.size() << endl;
+
     cin >> x;
 }
