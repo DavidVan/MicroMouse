@@ -52,6 +52,7 @@ void Maze::Initialize() {
         }
     }
     CalculateDistance();
+    mMouse.SetPosition(0, 15);
 }
 
 Block(*Maze::GetMaze())[16] { // What the fuck.
@@ -59,7 +60,11 @@ Block(*Maze::GetMaze())[16] { // What the fuck.
 }
 
 void Maze::FloodFill() {
-
+    // Read and Set Walls
+    
+    // Decide where to move (Use virtual mouse object to move)
+    
+    // Rinse and Repeat
 }
 
 void Maze::CalculateDistance() {

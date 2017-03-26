@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
     Block block;
-    cout << "Current: " << (int) block.GetBlock() << endl;
+    cout << "Current: " << (int)block.GetBlock() << endl;
     block.Set(Block::Bits::WestWall, true);
     cout << "After Setting West Wall: " << (int)block.GetBlock() << endl;
     block.Set(Block::Bits::EastWall, true);

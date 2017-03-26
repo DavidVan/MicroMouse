@@ -3,18 +3,18 @@
 
 class Block {
 
-// ---------------------------------
-// | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
-// ---------------------------------
-//   ^   ^   ^   ^   ^   ^   ^   ^
-//   |   |   |   |   |   |   |   |--- Visited Flag
-//   |   |   |   |   |   |   |--- UNUSED
-//   |   |   |   |   |   |--- UNUSED
-//   |   |   |   |   |--- UNUSED
-//   |   |   |   |--- West Wall Flag
-//   |   |   |--- East Wall Flag
-//   |   |--- South Wall Flag
-//   |--- North Wall Flag
+    // ---------------------------------
+    // | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
+    // ---------------------------------
+    //   ^   ^   ^   ^   ^   ^   ^   ^
+    //   |   |   |   |   |   |   |   |--- Visited Flag
+    //   |   |   |   |   |   |   |--- UNUSED
+    //   |   |   |   |   |   |--- UNUSED
+    //   |   |   |   |   |--- UNUSED
+    //   |   |   |   |--- West Wall Flag
+    //   |   |   |--- East Wall Flag
+    //   |   |--- South Wall Flag
+    //   |--- North Wall Flag
 
 private:
     unsigned char mBlock; // Holds the flags.
