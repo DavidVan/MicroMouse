@@ -10,6 +10,7 @@ private:
     unsigned char mPosition[2]; // [0] = X Coordinate, [1] = Y Coordinate
     bool InBounds(unsigned char, unsigned char);
 public:
+    Mouse();
     Mouse(unsigned char);
     const unsigned char* GetPosition();
     void SetPosition(unsigned char, unsigned char);

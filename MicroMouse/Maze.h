@@ -15,6 +15,7 @@ private:
     int CalculateManhattanDistance(int, int, int, int);
     int CalculateMinimum(int, int, int, int);
 public:
+    Maze();
     void Initialize();
     Block(*GetMaze())[16]; // What the fuck.
     void PrintDistance();

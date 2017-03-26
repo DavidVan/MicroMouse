@@ -4,6 +4,10 @@
 
 using namespace std;
 
+Maze::Maze() : mMouse(16) {
+    Initialize();
+}
+
 void Maze::Initialize() {
     for (int i = 0; i < 16; i++) {
         for (int j = 0; j < 16; j++) {

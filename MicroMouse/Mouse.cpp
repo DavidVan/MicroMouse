@@ -1,6 +1,6 @@
 #include "Mouse.h"
 
-Mouse::Mouse(unsigned char boardSize) : mBoardSize(boardSize), mPosition({0, 0}) {
+Mouse::Mouse(unsigned char boardSize) : mBoardSize(boardSize), mPosition{ {0}, {0} } {
 
 }
 
