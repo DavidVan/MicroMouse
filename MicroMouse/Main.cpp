@@ -23,19 +23,21 @@ int main() {
     maze.Initialize();
     maze.PrintDistance();
 
-    Stack<int> stack;
-    cout << "Initialized?: " << stack.size() << endl;
+    maze.FloodFill();
 
-    for (int i = 0; i < 17; i++) {
-        cout << i << endl;
-        stack.push(i);
-    }
+    //Stack<int> stack;
+    //cout << "Initialized?: " << stack.size() << endl;
 
-    cout << "Stack size: " << stack.size() << endl;
+    //for (int i = 0; i < 17; i++) {
+    //    cout << i << endl;
+    //    stack.push(i);
+    //}
 
-    cout << "Item: " << stack.pop() << endl;
+    //cout << "Stack size: " << stack.size() << endl;
 
-    cout << "Stack size: " << stack.size() << endl;
+    //cout << "Item: " << stack.pop() << endl;
+
+    //cout << "Stack size: " << stack.size() << endl;
 
     cin >> x;
 }
