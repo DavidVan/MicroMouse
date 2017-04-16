@@ -4,11 +4,11 @@
 
 using namespace std;
 
-Maze::Maze() : mMouse(16) {
+FakeMaze::FakeMaze() {
     Initialize();
 }
 
-void Maze::Initialize() {
+void FakeMaze::Initialize() {
     for (int i = 0; i < 16; i++) {
         for (int j = 0; j < 16; j++) {
             if (i == 0 || i == 15 || j == 0 || j == 15) {
@@ -56,30 +56,13 @@ void Maze::Initialize() {
         }
     }
     CalculateDistance();
-    mMouse.SetPosition(15, 0);
 }
 
-Block(*Maze::GetMaze())[16] { // What the fuck.
+Block(*FakeMaze::GetMaze())[16]{ // What the fuck.
     return mMaze;
 }
 
-void Maze::FloodFill() {
-    // Read and Set Walls
-    const unsigned char* mousePos = mMouse.GetPosition();
-    
-    int row = mousePos[0];
-    int col = mousePos[1];
-
-    mMaze[row][col].Set(Block::Bits::NorthWall, mMouse.ReadNorthWall());
-    mMaze[row][col].Set(Block::Bits::SouthWall, mMouse.ReadSouthWall());
-    mMaze[row][col].Set(Block::Bits::EastWall, mMouse.ReadEastWall());
-    mMaze[row][col].Set(Block::Bits::WestWall, mMouse.ReadWestWall());
-    // Decide where to move (Use virtual mouse object to move)
-    
-    // Rinse and Repeat
-}
-
-void Maze::CalculateDistance() {
+void FakeMaze::CalculateDistance() {
     // Objective is (7, 7), (7, 8), (8, 7), or (8, 8).
     // Calculate manhattan distance and use shortest one.
     int cornerOne = 7;
@@ -98,11 +81,11 @@ void Maze::CalculateDistance() {
     }
 }
 
-int Maze::CalculateManhattanDistance(int currentX, int currentY, int objectiveX, int objectiveY) {
+int FakeMaze::CalculateManhattanDistance(int currentX, int currentY, int objectiveX, int objectiveY) {
     return abs(currentX - objectiveX) + abs(currentY - objectiveY);
 }
 
-int Maze::CalculateMinimum(int a, int b, int c, int d) {
+int FakeMaze::CalculateMinimum(int a, int b, int c, int d) {
     int minimum = a;
     if (b < minimum) {
         minimum = b;
@@ -116,7 +99,7 @@ int Maze::CalculateMinimum(int a, int b, int c, int d) {
     return minimum;
 }
 
-void Maze::PrintDistance() {
+void FakeMaze::PrintDistance() {
     for (int i = 0; i < 16; i++) {
         for (int j = 0; j < 16; j++) {
             if (mMaze[i][j].GetDistance() >= 10) {
