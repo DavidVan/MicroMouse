@@ -2,14 +2,16 @@
 #define MAZE_H
 
 #include "Block.h"
+#include "Coord.h"
 #include "Mouse.h"
 #include "Stack.h"
 
 class Maze {
+
 private:
     Block mMaze[16][16];
     Mouse mMouse;
-    // Stack</*Data Type Here*/> mStack;
+    Stack<Coord> mStack; // If using pointers, make sure to delete everything!
     //void FloodFill();
     void CalculateDistance();
     int CalculateManhattanDistance(int, int, int, int);

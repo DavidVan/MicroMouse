@@ -13,9 +13,9 @@ private:
 public:
     Stack<TData>() : _size(0), _maxArraySize(16) { // Constructor
         elements = new TData[_maxArraySize]; // Initial size of 16.
-        for (int i = 0; i < _maxArraySize; i++) {
+        /*for (int i = 0; i < _maxArraySize; i++) {
             elements[i] = NULL;
-        }
+        }*/
     }
     ~Stack<TData>() { // Destructor
         delete[] elements;
@@ -36,9 +36,10 @@ void Stack<TData>::push(const TData& data) {
 }
 
 template <typename TData>
-const TData& Stack<TData>::pop() {
+const TData& Stack<TData>::pop() { // Need to delete returned value if needed!
     TData data = elements[_size - 1];
-    elements[--_size] = NULL; // Set to null and decrement.
+    //elements[--_size] = NULL; // Set to null and decrement.
+    _size--;
     return data;
 }
 

@@ -2,6 +2,7 @@
 #include "Block.h"
 #include "Stack.h"
 #include "Maze.h"
+#include "Coord.h"
 
 using namespace std;
 
@@ -25,19 +26,26 @@ int main() {
 
     maze.FloodFill();
 
-    //Stack<int> stack;
-    //cout << "Initialized?: " << stack.size() << endl;
+    /*Stack<Coord*> stack;
+    cout << "Initialized?: " << stack.size() << endl;
 
-    //for (int i = 0; i < 17; i++) {
-    //    cout << i << endl;
-    //    stack.push(i);
-    //}
+    for (int i = 0; i < 17; i++) {
+        cout << i << endl;
+        Coord *t = new Coord(i, i);
+        stack.push(t);
+    }
 
-    //cout << "Stack size: " << stack.size() << endl;
+    cout << "Stack size: " << stack.size() << endl;
 
-    //cout << "Item: " << stack.pop() << endl;
+    Coord *item = stack.pop();
 
-    //cout << "Stack size: " << stack.size() << endl;
+    cout << "Item: " << (int)(item->GetRow()) << endl;
+
+    delete item;
+
+    cout << "Item: " << (int)(item->GetRow()) << endl;
+
+    cout << "Stack size: " << stack.size() << endl;*/
 
     cin >> x;
 }

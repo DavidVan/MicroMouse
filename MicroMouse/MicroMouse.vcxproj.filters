@@ -30,6 +30,9 @@
     <ClInclude Include="FakeMaze.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Coord.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Block.cpp">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="FakeMaze.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Coord.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
