@@ -1,0 +1,19 @@
+Chassis Design:
+	- Hollowed out box approximately 13 cm x 6 cm
+		○ Top level: detachable; screws to lock it in place
+			§ Power supply
+			§ Drivers for motor on top as well
+				□ Holes for drivers to screw in
+			§ 4 slits along the sides to allow wires to be run through
+		○ Bottom level:
+			§ ultrasonic sensors on a small cutout --> causes sensors to stick out
+				□ Slits
+			§ Arduino Mega
+				□ Needs an outline to hold it and screw it in
+			§ Motors - need an opening for attachment with the wheel portion protrude
+	- Remember: Maze is 18 cm x 18 cm
+
+Competition date a week after finals 5/26
+May 6 physical mouse completed
+Mouse must be ready by the 24th
+Progress report May 1st - Reminder on April 28th
