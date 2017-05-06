@@ -1,0 +1,21 @@
+Adjustments to Prototype:
+Flip model
+Thinner walls by 0.25 cm
+Increase diameter by 1 mm for ultrasonic sensors
+For wheels:
+	- 0.6 cm diameter opening from the bottom of the chassis
+Rail --> height increase and wider
+	- Adjusted based on wheels
+	- ~1.5 cm from the top (after model is flipped)
+Hole-to-Hole length of ball bearing: 2.5 in.
+	- Width of chassis should accommodate for this length
+
+https://www.sparkfun.com/products/8909
+
+
+Schedule (Tentative):
+	- 4/29 - implement new chassis mods
+	- 5/06 - attach parts
+	- 5/13 - adjust code for movement
+	- 5/20 - more work
+5/28 competition
