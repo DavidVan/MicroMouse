@@ -20,11 +20,11 @@ void Coord::SetCol(unsigned char col) {
     col = col;
 }
 
-unsigned char Coord::GetRow() {
+unsigned char Coord::GetRow() const {
     return row;
 }
 
-unsigned char Coord::GetCol() {
+unsigned char Coord::GetCol() const {
     return col;
 }
 

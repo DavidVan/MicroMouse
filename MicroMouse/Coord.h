@@ -17,8 +17,8 @@ public:
 
     void SetRow(unsigned char);
     void SetCol(unsigned char);
-    unsigned char GetRow();
-    unsigned char GetCol();
+    unsigned char GetRow() const;
+    unsigned char GetCol() const;
 
     bool MoveUp();
     bool MoveDown();

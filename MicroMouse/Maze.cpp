@@ -81,18 +81,54 @@ void Maze::FloodFill() {
     // Rinse and Repeat
     while (!InGoal(&mousePos)) {
         while (!cellsToCheck.empty()) {
-            Coord cell = cellsToCheck.pop();
-            row = cell.GetRow();
-            col = cell.GetCol();
+            Coord currentCell = cellsToCheck.pop();
+            row = currentCell.GetRow();
+            col = currentCell.GetCol();
+            if ((currentDistance - mMaze[row][col].GetDistance()) != 1) {
+                Stack<Coord> listOfNeighbors = GetNeighbors(&currentCell);
+                Coord tempCoord = listOfNeighbors.pop();
+                int min = mMaze[tempCoord.GetRow()][tempCoord.GetRow()].GetDistance();
+                for (int i = 0; i < listOfNeighbors.size(); i++) {
+                    int tempRow = cellsToCheck.pop().GetRow();
+                    int tempCol = cellsToCheck.pop().GetCol();
+                    if (mMaze[tempRow][tempCol].GetDistance() < min) {
+                        min = mMaze[tempRow][tempCol].GetDistance();
+                    }
+                }
 
-            if ((currentDistance - mMaze[row][col].GetDistance()) == 1) {
+                mMaze[row][col].SetDistance(min + 1); // Make sure we have at least one viable cell by setting it equal to the minimum cell value plus one.
+
+                listOfNeighbors = GetNeighbors(&currentCell);
+                for (int i = 0; i < listOfNeighbors.size(); i++) {
+                    cellsToCheck.push(listOfNeighbors.pop());
+                }
 
             }
             else {
-
+                // Advance to ideal neighbor (least distance)
+                while (!cellsToCheck.empty()) {
+                    int tempRow = cellsToCheck.peek().GetRow();
+                    int tempCol = cellsToCheck.peek().GetCol();
+                    if (mMaze[tempRow][tempCol].GetDistance != 1) {
+                        cellsToCheck.pop(); // Destroy useless result.
+                    }
+                    else {
+                        break; // Let the parent loop take over. AKA Advance to next viable cell.
+                    }
+                }
             }
         }
     }
+}
+
+Stack<Coord> Maze::GetNeighbors(Coord* mousePos) {
+    Stack<Coord> neighbors;
+
+    // Right then Up
+
+    // Left then Down
+
+    return neighbors;
 }
 
 bool Maze::InGoal(Coord* mousePos) {

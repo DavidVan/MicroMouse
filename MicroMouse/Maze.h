@@ -13,6 +13,7 @@ private:
     void CalculateDistance();
     int CalculateManhattanDistance(int, int, int, int);
     int CalculateMinimum(int, int, int, int);
+    Stack<Coord> GetNeighbors(Coord*);
     bool InGoal(Coord*);
     bool ReadNorthWall();
     bool ReadSouthWall();
