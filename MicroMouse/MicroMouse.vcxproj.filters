@@ -27,9 +27,6 @@
     <ClInclude Include="Mouse.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FakeMaze.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Coord.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -45,9 +42,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Mouse.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FakeMaze.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Coord.cpp">

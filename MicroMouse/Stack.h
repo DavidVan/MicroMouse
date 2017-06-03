@@ -55,7 +55,7 @@ int Stack<TData>::size() {
 
 template <typename TData>
 bool Stack<TData>::empty() {
-    return size == 0;
+    return _size == 0;
 }
 
 template <typename TData>

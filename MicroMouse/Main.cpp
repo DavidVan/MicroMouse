@@ -24,7 +24,10 @@ int main() {
     maze.Initialize();
     maze.PrintDistance();
 
+    cout << endl << endl << endl;
+
     maze.FloodFill();
+    maze.PrintDistance();
 
     /*Stack<Coord*> stack;
     cout << "Initialized?: " << stack.size() << endl;

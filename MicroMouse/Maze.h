@@ -3,19 +3,22 @@
 
 #include "Block.h"
 #include "Coord.h"
-#include "Mouse.h"
 #include "Stack.h"
 
 class Maze {
 
 private:
     Block mMaze[16][16];
-    Mouse mMouse;
-    Stack<Coord> mStack; // If using pointers, make sure to delete everything!
     //void FloodFill();
     void CalculateDistance();
     int CalculateManhattanDistance(int, int, int, int);
     int CalculateMinimum(int, int, int, int);
+    bool InGoal(Coord*);
+    bool ReadNorthWall();
+    bool ReadSouthWall();
+    bool ReadEastWall();
+    bool ReadWestWall();
+    void SetWalls(Coord*);
 public:
     Maze();
     void Initialize();

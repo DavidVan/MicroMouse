@@ -1,14 +1,14 @@
 #ifndef MOUSE_H
 #define MOUSE_H
 
-#include "FakeMaze.h"
+#include "Maze.h"
 
 class Mouse {
     
     // Representation of a mouse in lieu of the real thing.
 
 private:
-    FakeMaze completeMaze; // Internal representation of the maze, complete with wall information.
+    Maze completeMaze; // Internal representation of the maze, complete with wall information.
     unsigned char mBoardSize;
     unsigned char mPosition[2]; // [0] = Row, [1] = Column
     bool InBounds(unsigned char, unsigned char);

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Maze::Maze() : mMouse(16) {
+Maze::Maze() {
     Initialize();
 }
 
@@ -56,7 +56,6 @@ void Maze::Initialize() {
         }
     }
     CalculateDistance();
-    mMouse.SetPosition(15, 0);
 }
 
 Block(*Maze::GetMaze())[16] { // What the fuck.
@@ -64,19 +63,71 @@ Block(*Maze::GetMaze())[16] { // What the fuck.
 }
 
 void Maze::FloodFill() {
-    // Read and Set Walls
-    const unsigned char* mousePos = mMouse.GetPosition();
-    
-    int row = mousePos[0];
-    int col = mousePos[1];
+    Stack<Coord> cellsToCheck; // If using pointers, make sure to delete everything!
 
-    mMaze[row][col].Set(Block::Bits::NorthWall, mMouse.ReadNorthWall());
-    mMaze[row][col].Set(Block::Bits::SouthWall, mMouse.ReadSouthWall());
-    mMaze[row][col].Set(Block::Bits::EastWall, mMouse.ReadEastWall());
-    mMaze[row][col].Set(Block::Bits::WestWall, mMouse.ReadWestWall());
-    // Decide where to move (Use virtual mouse object to move)
+    Coord mousePos(15, 0); // Row, Col - Starting is bottom left corner.
+
+    int row = mousePos.GetRow();
+    int col = mousePos.GetCol();
+
+    int currentDistance = mMaze[row][col].GetDistance();
     
+    // Read and Set Walls
+    SetWalls(&mousePos);
+    
+    // Start the process
+    cellsToCheck.push(mousePos);
+
     // Rinse and Repeat
+    while (!InGoal(&mousePos)) {
+        while (!cellsToCheck.empty()) {
+            Coord cell = cellsToCheck.pop();
+            row = cell.GetRow();
+            col = cell.GetCol();
+
+            if ((currentDistance - mMaze[row][col].GetDistance()) == 1) {
+
+            }
+            else {
+
+            }
+        }
+    }
+}
+
+bool Maze::InGoal(Coord* mousePos) {
+    int row = mousePos->GetRow();
+    int col = mousePos->GetCol();
+
+    return (row == 7 && col == 7) || (row == 7 && col == 8) || (row == 8 && col == 7) || (row == 8 && col == 8);
+}
+
+void Maze::SetWalls(Coord* mousePos) {
+    int row = mousePos->GetRow();
+    int col = mousePos->GetCol();
+
+    mMaze[row][col].Set(Block::Bits::NorthWall, ReadNorthWall());
+    mMaze[row][col].Set(Block::Bits::SouthWall, ReadSouthWall());
+    mMaze[row][col].Set(Block::Bits::EastWall, ReadEastWall());
+    mMaze[row][col].Set(Block::Bits::WestWall, ReadWestWall());
+}
+
+
+// Update the ReadWall functions to interface with the mouse later.
+bool Maze::ReadNorthWall() {
+    return true;
+}
+
+bool Maze::ReadSouthWall() {
+    return true;
+}
+
+bool Maze::ReadEastWall() {
+    return true;
+}
+
+bool Maze::ReadWestWall() {
+    return true;
 }
 
 void Maze::CalculateDistance() {
