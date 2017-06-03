@@ -124,9 +124,9 @@ void Maze::FloodFill() {
 Stack<Coord> Maze::GetNeighbors(Coord* mousePos) {
     Stack<Coord> neighbors;
 
-    // Right then Up
+    // Find out the best way to get neighbors... e.g. Turn right first over going straight up?
 
-    // Left then Down
+    // Requires hardware to check walls.
 
     return neighbors;
 }
