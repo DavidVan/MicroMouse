@@ -26,6 +26,7 @@ public:
     Block(*GetMaze())[16]; // What the fuck.
     void PrintDistance();
     void FloodFill(); // Move to private later
+	void breadth_first_search();
 };
 
 #endif

@@ -109,7 +109,7 @@ void Maze::FloodFill() {
                 while (!cellsToCheck.empty()) {
                     int tempRow = cellsToCheck.peek().GetRow();
                     int tempCol = cellsToCheck.peek().GetCol();
-                    if (mMaze[tempRow][tempCol].GetDistance != 1) {
+                    if (mMaze[tempRow][tempCol].GetDistance() != 1) {
                         cellsToCheck.pop(); // Destroy useless result.
                     }
                     else {
@@ -121,8 +121,16 @@ void Maze::FloodFill() {
     }
 }
 
+void Maze::breadth_first_search()
+{
+	
+}
+
 Stack<Coord> Maze::GetNeighbors(Coord* mousePos) {
     Stack<Coord> neighbors;
+
+
+	
 
     // Find out the best way to get neighbors... e.g. Turn right first over going straight up?
 
@@ -186,7 +194,7 @@ void Maze::CalculateDistance() {
 }
 
 int Maze::CalculateManhattanDistance(int currentX, int currentY, int objectiveX, int objectiveY) {
-    return abs(currentX - objectiveX) + abs(currentY - objectiveY);
+    return abs((double) currentX - objectiveX) + abs((double) currentY - objectiveY);
 }
 
 int Maze::CalculateMinimum(int a, int b, int c, int d) {
