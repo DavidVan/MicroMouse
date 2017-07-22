@@ -114,6 +114,7 @@
     <ClInclude Include="Coord.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="Mouse.h" />
+    <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>

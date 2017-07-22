@@ -123,7 +123,36 @@ void Maze::FloodFill() {
 
 void Maze::breadth_first_search()
 {
-	
+    Stack <Coord> cellsToCheck; // Change this to Queue when done building
+
+    Coord mousePos(15, 0);
+
+    int row = mousePos.GetRow();
+    int col = mousePos.GetCol();
+
+    int currentDistance = mMaze[row][col].GetDistance();
+
+    // Read and Set Walls
+    SetWalls(&mousePos);
+
+
+    while (!InGoal(&mousePos))
+    {
+        Coord currentCell = cellsToCheck.pop();
+
+        row = currentCell.GetRow();
+        col = currentCell.GetCol();
+
+        // Start the process
+        cellsToCheck.push(mousePos);
+
+        if ((currentDistance - mMaze[row][col].GetDistance()) != 1)
+        {
+            
+        }
+
+    }
+
 }
 
 Stack<Coord> Maze::GetNeighbors(Coord* mousePos) {
