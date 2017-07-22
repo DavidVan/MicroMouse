@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MicroMouse", "MicroMouse\MicroMouse.vcxproj", "{E4BD4846-15A2-49E1-93F3-4407F2F1AF99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5B8E82E3-B401-4AED-9A12-AA139486B841}"
+	ProjectSection(SolutionItems) = preProject
+		MicroMouse\Queue.cpp = MicroMouse\Queue.cpp
+		MicroMouse\Queue.h = MicroMouse\Queue.h
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

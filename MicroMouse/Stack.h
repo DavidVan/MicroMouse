@@ -73,4 +73,5 @@ void Stack<TData>::resizeArray() {
     delete[] oldData; // Remove the old data.
 }
 
+
 #endif
