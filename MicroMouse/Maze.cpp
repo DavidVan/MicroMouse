@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include "Maze.h"
+#include "Queue.h"
 
 using namespace std;
 
@@ -87,7 +88,7 @@ void Maze::FloodFill() {
             if ((currentDistance - mMaze[row][col].GetDistance()) != 1) {
                 Stack<Coord> listOfNeighbors = GetNeighbors(&currentCell);
                 Coord tempCoord = listOfNeighbors.pop();
-                int min = mMaze[tempCoord.GetRow()][tempCoord.GetRow()].GetDistance();
+                int min = mMaze[(int) tempCoord.GetRow()][(int) tempCoord.GetRow()].GetDistance();
                 for (int i = 0; i < listOfNeighbors.size(); i++) {
                     int tempRow = cellsToCheck.pop().GetRow();
                     int tempCol = cellsToCheck.pop().GetCol();
@@ -123,7 +124,7 @@ void Maze::FloodFill() {
 
 void Maze::breadth_first_search()
 {
-    Stack <Coord> cellsToCheck; // Change this to Queue when done building
+    Queue <Coord> cellsToCheck;
 
     Coord mousePos(15, 0);
 
@@ -135,16 +136,17 @@ void Maze::breadth_first_search()
     // Read and Set Walls
     SetWalls(&mousePos);
 
+	cellsToCheck.enqueue(mousePos);
 
     while (!InGoal(&mousePos))
     {
-        Coord currentCell = cellsToCheck.pop();
+        Coord currentCell = cellsToCheck.dequeue();
 
         row = currentCell.GetRow();
         col = currentCell.GetCol();
 
         // Start the process
-        cellsToCheck.push(mousePos);
+        cellsToCheck.enqueue(mousePos);
 
         if ((currentDistance - mMaze[row][col].GetDistance()) != 1)
         {
@@ -158,8 +160,21 @@ void Maze::breadth_first_search()
 Stack<Coord> Maze::GetNeighbors(Coord* mousePos) {
     Stack<Coord> neighbors;
 
+	Coord mouse = *mousePos;
 
-	
+	Coord up = mouse;
+	up.MoveUp();
+	Coord down = mouse;
+	down.MoveDown();
+	Coord left = mouse;
+	left.MoveLeft();
+	Coord right = mouse;
+	right.MoveRight();
+
+	neighbors.push(up);
+	neighbors.push(down);
+	neighbors.push(left);
+	neighbors.push(right);
 
     // Find out the best way to get neighbors... e.g. Turn right first over going straight up?
 

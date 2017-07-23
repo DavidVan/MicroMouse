@@ -50,5 +50,7 @@ int main() {
 
 	cout << "Stack size: " << stack.size() << endl;*/
 
-	cin >> x;
+	system("pause");
+	
+	return 0;
 }

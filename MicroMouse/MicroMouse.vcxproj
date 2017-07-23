@@ -124,6 +124,7 @@
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Queue.cpp" />
+    <ClCompile Include="Stack_Test.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
