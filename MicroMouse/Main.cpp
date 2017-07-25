@@ -26,7 +26,7 @@ int main() {
 
 	cout << endl << endl << endl;
 
-	maze.FloodFill();
+	//maze.FloodFill();
 	maze.PrintDistance();
 
 	/*Stack<Coord*> stack;

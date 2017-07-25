@@ -2,6 +2,7 @@
 #include <cmath>
 #include "Maze.h"
 #include "Queue.h"
+#include "Mouse.h"
 
 using namespace std;
 
@@ -53,7 +54,7 @@ void Maze::Initialize() {
                 mMaze[i][j].Set(Block::Bits::WestWall, false);
                 mMaze[i][j].SetDistance(-1);
             }
-            mMaze[i][j].Set(Block::Bits::Visited, false);
+            mMaze[i][j].Set(Block::Bits::Not_Visited, true);
         }
     }
     CalculateDistance();
@@ -122,40 +123,23 @@ void Maze::FloodFill() {
     }
 }
 
-void Maze::breadth_first_search()
+void Maze::floodFill()
 {
     Queue <Coord> cellsToCheck;
+    Stack <Coord> previousCells;
 
-    Coord mousePos(15, 0);
+    Mouse mouse(16);
 
-    int row = mousePos.GetRow();
-    int col = mousePos.GetCol();
+    cellsToCheck.enqueue(mouse.GetPosition());
+    previousCells.push(mouse.GetPosition());
 
-    int currentDistance = mMaze[row][col].GetDistance();
-
-    // Read and Set Walls
-    SetWalls(&mousePos);
-
-	cellsToCheck.enqueue(mousePos);
-
-    while (!InGoal(&mousePos))
+    while (!cellsToCheck.isEmpty())
     {
-        Coord currentCell = cellsToCheck.dequeue();
-
-        row = currentCell.GetRow();
-        col = currentCell.GetCol();
-
-        // Start the process
-        cellsToCheck.enqueue(mousePos);
-
-        if ((currentDistance - mMaze[row][col].GetDistance()) != 1)
-        {
-            
-        }
-
+        
     }
-
+    
 }
+
 
 Stack<Coord> Maze::GetNeighbors(Coord* mousePos) {
     Stack<Coord> neighbors;

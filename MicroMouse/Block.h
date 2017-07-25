@@ -7,8 +7,8 @@ class Block {
     // | 7 | 6 | 5 | 4 | 3 | 2 | 1 | 0 |
     // ---------------------------------
     //   ^   ^   ^   ^   ^   ^   ^   ^
-    //   |   |   |   |   |   |   |   |--- Visited Flag
-    //   |   |   |   |   |   |   |--- UNUSED
+    //   |   |   |   |   |   |   |   |--- Not Visited Flag
+    //   |   |   |   |   |   |   |--- Visited
     //   |   |   |   |   |   |--- UNUSED
     //   |   |   |   |   |--- UNUSED
     //   |   |   |   |--- West Wall Flag
@@ -28,7 +28,9 @@ public:
         SouthWall = 6,
         EastWall = 5,
         WestWall = 4,
-        Visited = 0
+        Not_Passable = 2,
+        Passable = 1,
+        Not_Visited = 0
     };
 
     void Set(Bits, bool); // Used to set various flags (above).

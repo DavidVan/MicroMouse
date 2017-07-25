@@ -8,7 +8,7 @@
 class Maze {
 
 private:
-    Block mMaze[16][16];
+    
     //void FloodFill();
     void CalculateDistance();
     int CalculateManhattanDistance(int, int, int, int);
@@ -23,10 +23,11 @@ private:
 public:
     Maze();
     void Initialize();
+    Block mMaze[16][16];
     Block(*GetMaze())[16]; // What the fuck.
     void PrintDistance();
     void FloodFill(); // Move to private later
-    void breadth_first_search();
+    void floodFill();
 };
 
 #endif
